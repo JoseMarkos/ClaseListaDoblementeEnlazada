@@ -61,6 +61,24 @@ namespace ClaseListaDoblementeEnlazada
 			ListaDoblementeEnlazada.Remove(node.Next);
 		}
 
+		public Dispositivo BuscarPorId(int id)
+		{
+			var enumerator = ListaDoblementeEnlazada.GetEnumerator();
+			Dispositivo encontrado = new Dispositivo();
+
+			while(enumerator.MoveNext())
+			{
+				var dispositivo = (Dispositivo)enumerator.Current;
+
+				if (dispositivo.ID != id)
+				{
+					return new Dispositivo();
+				}
+				return dispositivo;
+			}
+			return encontrado;
+		}
+
 		private void Contiene(object nodo)
 		{
 			if (!ListaDoblementeEnlazada.Contains(nodo))

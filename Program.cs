@@ -9,15 +9,18 @@ namespace ClaseListaDoblementeEnlazada
         {
             var lista = new ClaseListaDoblementeEnlazada();
             var instancia = new Dispositivo();
+            instancia.MyProperty = 3;
+			instancia.ID = 1;
             var instanciaDos = new Dispositivo
             {
-                MyProperty = 4
+                MyProperty 	= 4,
+				ID 			= 2
             };
             var instanciaTres = new Dispositivo
             {
-                MyProperty = 5
+                MyProperty 	= 5,
+				ID			= 3
             };
-            instancia.MyProperty = 3;
             lista.AgregarPrimero(instancia);
             lista.AgregarDespuesDe(instancia, instanciaDos);
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
@@ -25,6 +28,9 @@ namespace ClaseListaDoblementeEnlazada
             lista.EliminarDespuesDe(instancia);
 			System.Console.WriteLine();
 			PrintList(lista.GetEnumerator());
+			System.Console.WriteLine();
+			System.Console.WriteLine(lista.BuscarPorId(1).ID);
+			System.Console.WriteLine(lista.BuscarPorId(1).MyProperty);
         }
 
         private static void PrintList(IEnumerator<object> enumerator)
