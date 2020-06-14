@@ -25,13 +25,13 @@ namespace ClaseListaDoblementeEnlazada
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
      
 
-            var dispositivo = lista.BuscarPorId(2, true);
-            var casteado = (Dispositivo)dispositivo.Next.Value;
-            var casteadoPrev = (Dispositivo)dispositivo.Previous.Value;
-            System.Console.WriteLine("next");
-            System.Console.WriteLine(casteado.ID);
-            System.Console.WriteLine("previous");
-            System.Console.WriteLine(casteadoPrev.ID);
+            var nodo = lista.BuscarPorId(2, true);
+            var nodoNext = (Dispositivo)nodo.Next.Value;
+            var nodoPrevious = (Dispositivo)nodo.Previous.Value;
+            System.Console.WriteLine("Next");
+            System.Console.WriteLine(nodoNext.ID);
+            System.Console.WriteLine("Previous");
+            System.Console.WriteLine(nodoPrevious.ID);
 
         }
 
