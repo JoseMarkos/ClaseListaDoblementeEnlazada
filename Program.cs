@@ -20,16 +20,25 @@ namespace ClaseListaDoblementeEnlazada
                 MyProperty = 5,
                 ID = 3
             };
+            var instanciaCuatro = new DispositivoHijo1
+            {
+                ID = 4,
+                MyProperty = 6,
+                Descripcion = "hola"
+            };
             lista.AgregarPrimero(instancia);
             lista.AgregarDespuesDe(instancia, instanciaDos);
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
+            lista.AgregarUltimo(instanciaCuatro);
             PrintList(lista.GetEnumerator());
             lista.EliminarDespuesDe(instancia);
             System.Console.WriteLine();
             PrintList(lista.GetEnumerator());
-            System.Console.WriteLine();
-            System.Console.WriteLine(lista.BuscarPorId(3).ID);
-            System.Console.WriteLine(lista.BuscarPorId(3).MyProperty);
+            System.Console.WriteLine("Buscar id 4");
+            System.Console.WriteLine(lista.BuscarPorId(4).ID);
+            System.Console.WriteLine(lista.BuscarPorId(4).MyProperty);
+            var omg = (DispositivoHijo1)lista.BuscarPorId(4);
+            System.Console.WriteLine(omg.Descripcion);
         }
 
         private static void PrintList(IEnumerator<object> enumerator)
