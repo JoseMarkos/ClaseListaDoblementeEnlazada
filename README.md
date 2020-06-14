@@ -9,9 +9,9 @@ Originalmente para demostrar que la clase ClaseListaDoblementeEnlazada soporta u
 
 Para seguir con la idea original el metodo *BuscarPorId* podria debolver un *object* y hacer el cast afuera de la clase por ejemplo en el archivo Program.cs
 
-<code>
+```
   var encontrado = (Dispositivo)lista.BuscarPorId(3);
   System.Console.WriteLine(encontrado.ID);
-</code>
+```
 
 ## Clase ClaseListaDoblementeEnlazada
