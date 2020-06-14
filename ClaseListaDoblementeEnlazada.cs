@@ -36,15 +36,15 @@ namespace ClaseListaDoblementeEnlazada
 			ListaDoblementeEnlazada.Remove(nodo);
 		}
 
-		public void EliminarPrimero(object nodo)
+		public void EliminarPrimero()
 		{
-			Contiene(nodo);
+			ListaNoVacia();
 			ListaDoblementeEnlazada.RemoveFirst();
 		}
 
-		public void EliminarUltimo(object nodo)
+		public void EliminarUltimo()
 		{
-			Contiene(nodo);
+			ListaNoVacia();
 			ListaDoblementeEnlazada.RemoveLast();
 		}
 
@@ -84,6 +84,14 @@ namespace ClaseListaDoblementeEnlazada
 			if (!ListaDoblementeEnlazada.Contains(nodo))
 			{
 				throw new ArgumentOutOfRangeException("El nodo no existe.");
+			}
+		}
+
+		private void ListaNoVacia()
+		{
+			if (ListaDoblementeEnlazada.Count == 0)
+			{
+				throw new ArgumentOutOfRangeException("La lista está vaciá.");
 			}
 		}
 
