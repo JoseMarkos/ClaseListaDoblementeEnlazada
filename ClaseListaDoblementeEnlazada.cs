@@ -5,7 +5,7 @@ namespace ClaseListaDoblementeEnlazada
 {
     public sealed class ClaseListaDoblementeEnlazada
     {
-		public LinkedList<object> ListaDoblementeEnlazada {get; private set;}
+		private LinkedList<object> ListaDoblementeEnlazada;
 
 		public ClaseListaDoblementeEnlazada()
 		{
@@ -24,11 +24,7 @@ namespace ClaseListaDoblementeEnlazada
 
 		public void AgregarDespuesDe(object nodo, object nuevoNodo)
 		{
-			if (!ListaDoblementeEnlazada.Contains(nodo))
-			{
-				throw new ArgumentOutOfRangeException("El nodo no existe.");
-			}
-
+			Contiene(nodo);
 			var node 	= ListaDoblementeEnlazada.Find(nodo);
 			var newNode = new LinkedListNode<object>(nuevoNodo);
 			ListaDoblementeEnlazada.AddAfter(node, newNode);
@@ -36,12 +32,45 @@ namespace ClaseListaDoblementeEnlazada
 
 		public void Eliminar(object nodo)
 		{
-			if (!ListaDoblementeEnlazada.Contains(nodo))
+			Contiene(nodo);
+			ListaDoblementeEnlazada.Remove(nodo);
+		}
+
+		public void EliminarPrimero(object nodo)
+		{
+			Contiene(nodo);
+			ListaDoblementeEnlazada.RemoveFirst();
+		}
+
+		public void EliminarUltimo(object nodo)
+		{
+			Contiene(nodo);
+			ListaDoblementeEnlazada.RemoveLast();
+		}
+
+		public void EliminarDespuesDe(object nodo)
+		{
+			Contiene(nodo);
+			var node 	= ListaDoblementeEnlazada.Find(nodo);
+
+			if (node.Next == null)
 			{
 				throw new ArgumentOutOfRangeException("El nodo no existe.");
 			}
 
-			ListaDoblementeEnlazada.Remove(nodo);
+			ListaDoblementeEnlazada.Remove(node.Next);
+		}
+
+		private void Contiene(object nodo)
+		{
+			if (!ListaDoblementeEnlazada.Contains(nodo))
+			{
+				throw new ArgumentOutOfRangeException("El nodo no existe.");
+			}
+		}
+		public IEnumerator<object> GetEnumerator()
+		{
+			return ListaDoblementeEnlazada.GetEnumerator();
 		}
     }
 }
