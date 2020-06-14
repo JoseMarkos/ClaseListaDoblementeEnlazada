@@ -23,13 +23,14 @@ namespace ClaseListaDoblementeEnlazada
             lista.AgregarPrimero(instancia);
             lista.AgregarDespuesDe(instancia, instanciaDos);
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
-            PrintList(lista.GetEnumerator());
-            lista.EliminarDespuesDe(instancia);
-            System.Console.WriteLine();
-            PrintList(lista.GetEnumerator());
-            System.Console.WriteLine();
-            System.Console.WriteLine(lista.BuscarPorId(3).ID);
-            System.Console.WriteLine(lista.BuscarPorId(3).MyProperty);
+     
+
+            System.Console.WriteLine("hola");
+            var dispositivo = lista.BuscarPorId(1, true);
+            var casteado = (Dispositivo)dispositivo.Next.Next.Value;
+            System.Console.WriteLine(casteado.ID);
+            System.Console.WriteLine(casteado.MyProperty);
+            
         }
 
         private static void PrintList(IEnumerator<object> enumerator)
