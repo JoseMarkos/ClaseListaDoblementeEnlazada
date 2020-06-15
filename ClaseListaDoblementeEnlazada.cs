@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace ClaseListaDoblementeEnlazada
 {
-    public sealed class ClaseListaDoblementeEnlazada
-    {
+	public sealed class ClaseListaDoblementeEnlazada
+	{
 		private LinkedList<object> ListaDoblementeEnlazada;
 
 		public ClaseListaDoblementeEnlazada()
@@ -25,7 +25,7 @@ namespace ClaseListaDoblementeEnlazada
 		public void AgregarDespuesDe(object nodo, object nuevoNodo)
 		{
 			Contiene(nodo);
-			var node 	= ListaDoblementeEnlazada.Find(nodo);
+			var node = ListaDoblementeEnlazada.Find(nodo);
 			var newNode = new LinkedListNode<object>(nuevoNodo);
 			ListaDoblementeEnlazada.AddAfter(node, newNode);
 		}
@@ -51,7 +51,7 @@ namespace ClaseListaDoblementeEnlazada
 		public void EliminarDespuesDe(object nodo)
 		{
 			Contiene(nodo);
-			var node 	= ListaDoblementeEnlazada.Find(nodo);
+			var node = ListaDoblementeEnlazada.Find(nodo);
 
 			if (node.Next == null)
 			{
@@ -65,7 +65,7 @@ namespace ClaseListaDoblementeEnlazada
 		{
 			var enumerator = ListaDoblementeEnlazada.GetEnumerator();
 
-			while(enumerator.MoveNext())
+			while (enumerator.MoveNext())
 			{
 				var dispositivo = (Dispositivo)enumerator.Current;
 
@@ -89,5 +89,5 @@ namespace ClaseListaDoblementeEnlazada
 		{
 			return ListaDoblementeEnlazada.GetEnumerator();
 		}
-    }
+	}
 }
