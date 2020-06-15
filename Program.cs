@@ -31,9 +31,11 @@ namespace ClaseListaDoblementeEnlazada
             lista.AgregarDespuesDe(instancia, instanciaDos);
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
             lista.AgregarUltimo(instanciaCuatro);
+            System.Console.WriteLine("Cuatro dispositivos");
             PrintList(lista.GetEnumerator());
-            lista.EliminarDespuesDe(instancia);
             System.Console.WriteLine();
+            System.Console.WriteLine("Eliminar despues de 1");
+            lista.EliminarDespuesDe(instancia);
             PrintList(lista.GetEnumerator());
 
             System.Console.WriteLine();
@@ -54,6 +56,16 @@ namespace ClaseListaDoblementeEnlazada
                 MostrarDispositivo(hola);
             }
 
+            System.Console.WriteLine();
+            System.Console.WriteLine("Next y prev de nodo con id 3");
+            var nodo = lista.BuscarPorId(3, true);
+            var nodoNext = (Dispositivo)nodo.Next.Value;
+            var nodoPrevious = (Dispositivo)nodo.Previous.Value;
+            System.Console.WriteLine("Next");
+            System.Console.WriteLine(nodoNext.ID);
+            System.Console.WriteLine("Previous");
+            System.Console.WriteLine(nodoPrevious.ID);
+
         }
 
         private static void PrintList(IEnumerator<object> enumerator)
@@ -61,7 +73,7 @@ namespace ClaseListaDoblementeEnlazada
             while (enumerator.MoveNext())
             {
                 var dispositivo = (Dispositivo)enumerator.Current;
-                System.Console.WriteLine(dispositivo.MyProperty);
+                System.Console.WriteLine(dispositivo.ID);
             }
             enumerator.Dispose();
         }
