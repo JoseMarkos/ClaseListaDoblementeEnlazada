@@ -32,11 +32,11 @@ namespace ClaseListaDoblementeEnlazada
             lista.AgregarDespuesDe(instanciaDos, instanciaTres);
             lista.AgregarUltimo(instanciaCuatro);
             System.Console.WriteLine("Cuatro dispositivos");
-            PrintList(lista.GetEnumerator());
+            MostrarIDDeLosElementos(lista.GetEnumerator());
             System.Console.WriteLine();
             System.Console.WriteLine("Eliminar despues de 1");
             lista.EliminarDespuesDe(instancia);
-            PrintList(lista.GetEnumerator());
+            MostrarIDDeLosElementos(lista.GetEnumerator());
 
             System.Console.WriteLine();
             System.Console.WriteLine("Buscar id 4");
@@ -68,7 +68,7 @@ namespace ClaseListaDoblementeEnlazada
 
         }
 
-        private static void PrintList(IEnumerator<object> enumerator)
+        private static void MostrarIDDeLosElementos(IEnumerator<object> enumerator)
         {
             while (enumerator.MoveNext())
             {

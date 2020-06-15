@@ -12,28 +12,28 @@ namespace ClaseListaDoblementeEnlazada
 			ListaDoblementeEnlazada = new LinkedList<object>();
 		}
 
-		public void AgregarPrimero(object nuevoNodo)
+		public void AgregarPrimero(object nuevoObjeto)
 		{
-			ListaDoblementeEnlazada.AddFirst(nuevoNodo);
+			ListaDoblementeEnlazada.AddFirst(nuevoObjeto);
 		}
 
-		public void AgregarUltimo(object nuevoNodo)
+		public void AgregarUltimo(object nuevoObjeto)
 		{
-			ListaDoblementeEnlazada.AddLast(nuevoNodo);
+			ListaDoblementeEnlazada.AddLast(nuevoObjeto);
 		}
 
-		public void AgregarDespuesDe(object nodo, object nuevoNodo)
+		public void AgregarDespuesDe(object objeto, object nuevoObjeto)
 		{
-			Contiene(nodo);
-			var node = ListaDoblementeEnlazada.Find(nodo);
-			var newNode = new LinkedListNode<object>(nuevoNodo);
-			ListaDoblementeEnlazada.AddAfter(node, newNode);
+			Contiene(objeto);
+			var nodo = ListaDoblementeEnlazada.Find(objeto);
+			var nuevoNodo = new LinkedListNode<object>(nuevoObjeto);
+			ListaDoblementeEnlazada.AddAfter(nodo, nuevoNodo);
 		}
 
-		public void Eliminar(object nodo)
+		public void Eliminar(object objeto)
 		{
-			Contiene(nodo);
-			ListaDoblementeEnlazada.Remove(nodo);
+			Contiene(objeto);
+			ListaDoblementeEnlazada.Remove(objeto);
 		}
 
 		public void EliminarPrimero()
@@ -48,17 +48,17 @@ namespace ClaseListaDoblementeEnlazada
 			ListaDoblementeEnlazada.RemoveLast();
 		}
 
-		public void EliminarDespuesDe(object nodo)
+		public void EliminarDespuesDe(object objeto)
 		{
-			Contiene(nodo);
-			var node = ListaDoblementeEnlazada.Find(nodo);
+			Contiene(objeto);
+			var nodo = ListaDoblementeEnlazada.Find(objeto);
 
-			if (node.Next == null)
+			if (nodo.Next == null)
 			{
-				throw new ArgumentOutOfRangeException("El nodo no existe.");
+				throw new ArgumentOutOfRangeException("El objeto no existe.");
 			}
 
-			ListaDoblementeEnlazada.Remove(node.Next);
+			ListaDoblementeEnlazada.Remove(nodo.Next);
 		}
 
 		public object BuscarPorId(int id)
@@ -98,11 +98,11 @@ namespace ClaseListaDoblementeEnlazada
 		}
 
 
-		private void Contiene(object nodo)
+		private void Contiene(object objeto)
 		{
-			if (!ListaDoblementeEnlazada.Contains(nodo))
+			if (!ListaDoblementeEnlazada.Contains(objeto))
 			{
-				throw new ArgumentOutOfRangeException("El nodo no existe.");
+				throw new ArgumentOutOfRangeException("El objeto no existe.");
 			}
 		}
 
