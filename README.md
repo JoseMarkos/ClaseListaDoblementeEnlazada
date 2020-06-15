@@ -12,6 +12,13 @@ Añadidas para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta u
   *int id*
   
   *return object*
+  
+ ### BuscarPorId
+  *int id*
+  
+  *bool devolverNodo*
+  
+  *return LinkedListNode<object>*
 
 
 ## Propuesta para mostrar propiedades de las clases
@@ -34,3 +41,18 @@ Hay que hacer el cast afuera de la clase por ejemplo en el archivo Program.cs
       MostrarDispositivo(hola);
   }
 ```
+
+## Nodo
+Ejemplo usando nodos:
+
+```
+ var nodo = lista.BuscarPorId(3, true);
+ var nodoNext = (Dispositivo)nodo.Next.Value;
+ var nodoPrevious = (Dispositivo)nodo.Previous.Value;
+ 
+ System.Console.WriteLine("Next");
+ System.Console.WriteLine(nodoNext.ID);
+ System.Console.WriteLine("Previous");
+ System.Console.WriteLine(nodoPrevious.ID);
+```
+
