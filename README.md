@@ -3,7 +3,7 @@ Para proyecto de Progra IIB en Grupo
 
 ## Clases Dispositivo, DispositivoHijo1 y DispositivoHijo2
 
-Demos para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta una instancia de cualquier clase.
+Añadidas para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta una instancia de cualquier clase.
 
 
 ## Clase ClaseListaDoblementeEnlazada
