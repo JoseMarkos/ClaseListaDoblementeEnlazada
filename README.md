@@ -10,6 +10,7 @@ Demos para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta una i
 
 ### BuscarPorId
   *int id*
+  
   *return object*
 
 
