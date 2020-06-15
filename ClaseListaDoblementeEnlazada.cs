@@ -79,6 +79,25 @@ namespace ClaseListaDoblementeEnlazada
 			return new object();
 		}
 
+		public LinkedListNode<object> BuscarPorId(int id, bool devolverNodo)
+		{
+			var enumerator = ListaDoblementeEnlazada.GetEnumerator();
+
+			while (enumerator.MoveNext())
+			{
+				var dispositivo = (Dispositivo)enumerator.Current;
+
+				if (dispositivo.ID == id)
+				{
+					enumerator.Dispose();
+					return ListaDoblementeEnlazada.Find(dispositivo);
+				}
+			}
+			enumerator.Dispose();
+			return new LinkedListNode<object>(new Dispositivo());
+		}
+
+
 		private void Contiene(object nodo)
 		{
 			if (!ListaDoblementeEnlazada.Contains(nodo))
@@ -91,7 +110,7 @@ namespace ClaseListaDoblementeEnlazada
 		{
 			if (ListaDoblementeEnlazada.Count == 0)
 			{
-				throw new ArgumentOutOfRangeException("La lista está vaciá.");
+				throw new ArgumentOutOfRangeException("La lista estï¿½ vaciï¿½.");
 			}
 		}
 
@@ -103,6 +122,11 @@ namespace ClaseListaDoblementeEnlazada
 		public Dispositivo Primero()
 		{
 			return (Dispositivo)ListaDoblementeEnlazada.First.Value;
+		}
+
+		public LinkedListNode<object> Primero(bool devolverNodo)
+		{
+			return ListaDoblementeEnlazada.First;
 		}
 	}
 }
