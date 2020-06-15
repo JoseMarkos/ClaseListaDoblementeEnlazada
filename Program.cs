@@ -15,7 +15,7 @@ namespace ClaseListaDoblementeEnlazada
                 MyProperty = 4,
                 ID = 2
             };
-            var instanciaTres = new Dispositivo
+            var instanciaTres = new DispositivoHijo2
             {
                 MyProperty = 5,
                 ID = 3
@@ -34,11 +34,24 @@ namespace ClaseListaDoblementeEnlazada
             lista.EliminarDespuesDe(instancia);
             System.Console.WriteLine();
             PrintList(lista.GetEnumerator());
+
+            System.Console.WriteLine();
             System.Console.WriteLine("Buscar id 4");
-            System.Console.WriteLine(lista.BuscarPorId(4).ID);
-            System.Console.WriteLine(lista.BuscarPorId(4).MyProperty);
-            var omg = (DispositivoHijo1)lista.BuscarPorId(4);
-            System.Console.WriteLine(omg.Descripcion);
+            
+            var encontrado = lista.BuscarPorId(4);
+            var tipo = encontrado.GetType();
+
+            if (tipo == typeof(DispositivoHijo1))
+            {
+                var hola = (DispositivoHijo1)encontrado;
+                MostrarDispositivoHijo1(hola);
+            }
+
+            if (tipo == typeof(DispositivoHijo2))
+            {
+                var hola = (DispositivoHijo2)encontrado;
+            }
+
         }
 
         private static void PrintList(IEnumerator<object> enumerator)
@@ -50,5 +63,13 @@ namespace ClaseListaDoblementeEnlazada
             }
             enumerator.Dispose();
         }
+
+        private static void MostrarDispositivoHijo1(DispositivoHijo1 dispositivo)
+        {
+            System.Console.WriteLine(dispositivo.ID);
+            System.Console.WriteLine(dispositivo.MyProperty);
+            System.Console.WriteLine(dispositivo.Descripcion);
+        }
+     
     }
 }
