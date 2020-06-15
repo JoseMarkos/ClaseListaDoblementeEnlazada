@@ -18,7 +18,7 @@ Añadidas para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta u
   
   *bool devolverNodo*
   
-  *return LinkedListNode<object>*
+  *return LinkedListNode&#60;object&#x3e;*
 
 
 ## Propuesta para mostrar propiedades de las clases
