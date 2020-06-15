@@ -18,7 +18,8 @@ namespace ClaseListaDoblementeEnlazada
             var instanciaTres = new DispositivoHijo2
             {
                 MyProperty = 5,
-                ID = 3
+                ID = 3,
+                Hola = 500
             };
             var instanciaCuatro = new DispositivoHijo1
             {
@@ -44,12 +45,13 @@ namespace ClaseListaDoblementeEnlazada
             if (tipo == typeof(DispositivoHijo1))
             {
                 var hola = (DispositivoHijo1)encontrado;
-                MostrarDispositivoHijo1(hola);
+                MostrarDispositivo(hola);
             }
 
             if (tipo == typeof(DispositivoHijo2))
             {
                 var hola = (DispositivoHijo2)encontrado;
+                MostrarDispositivo(hola);
             }
 
         }
@@ -64,12 +66,19 @@ namespace ClaseListaDoblementeEnlazada
             enumerator.Dispose();
         }
 
-        private static void MostrarDispositivoHijo1(DispositivoHijo1 dispositivo)
+        private static void MostrarDispositivo(DispositivoHijo1 dispositivo)
         {
             System.Console.WriteLine(dispositivo.ID);
             System.Console.WriteLine(dispositivo.MyProperty);
             System.Console.WriteLine(dispositivo.Descripcion);
         }
-     
+
+        private static void MostrarDispositivo(DispositivoHijo2 dispositivo)
+        {
+            System.Console.WriteLine(dispositivo.ID);
+            System.Console.WriteLine(dispositivo.MyProperty);
+            System.Console.WriteLine(dispositivo.Hola);
+        }
+
     }
 }

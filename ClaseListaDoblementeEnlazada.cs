@@ -67,28 +67,16 @@ namespace ClaseListaDoblementeEnlazada
 
 			while (enumerator.MoveNext())
 			{
-				var tipo = enumerator.Current.GetType().Name;
-				Dispositivo dispositivo;
-
-				switch (tipo)
-				{
-					case "DispositivoHijo1":
-						dispositivo = (DispositivoHijo1)enumerator.Current;
-						break;
-					default:
-						dispositivo = (Dispositivo)enumerator.Current;
-						break;
-				}
-
+				var dispositivo = (Dispositivo)enumerator.Current;
 
 				if (dispositivo.ID == id)
 				{
 					enumerator.Dispose();
-					return dispositivo;
+					return enumerator.Current;
 				}
 			}
 			enumerator.Dispose();
-			return new Dispositivo();
+			return new object();
 		}
 
 		private void Contiene(object nodo)
