@@ -71,10 +71,11 @@ namespace ClaseListaDoblementeEnlazada
 
 				if (dispositivo.ID == id)
 				{
+					enumerator.Dispose();
 					return dispositivo;
 				}
 			}
-
+			enumerator.Dispose();
 			return new Dispositivo();
 		}
 
@@ -85,6 +86,7 @@ namespace ClaseListaDoblementeEnlazada
 				throw new ArgumentOutOfRangeException("El nodo no existe.");
 			}
 		}
+
 		public IEnumerator<object> GetEnumerator()
 		{
 			return ListaDoblementeEnlazada.GetEnumerator();
