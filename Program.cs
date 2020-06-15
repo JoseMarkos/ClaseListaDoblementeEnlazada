@@ -29,8 +29,8 @@ namespace ClaseListaDoblementeEnlazada
 			System.Console.WriteLine();
 			PrintList(lista.GetEnumerator());
 			System.Console.WriteLine();
-			System.Console.WriteLine(lista.BuscarPorId(1).ID);
-			System.Console.WriteLine(lista.BuscarPorId(1).MyProperty);
+			System.Console.WriteLine(lista.BuscarPorId(3).ID);
+			System.Console.WriteLine(lista.BuscarPorId(3).MyProperty);
         }
 
         private static void PrintList(IEnumerator<object> enumerator)

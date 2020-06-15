@@ -64,19 +64,18 @@ namespace ClaseListaDoblementeEnlazada
 		public Dispositivo BuscarPorId(int id)
 		{
 			var enumerator = ListaDoblementeEnlazada.GetEnumerator();
-			Dispositivo encontrado = new Dispositivo();
 
 			while(enumerator.MoveNext())
 			{
 				var dispositivo = (Dispositivo)enumerator.Current;
 
-				if (dispositivo.ID != id)
+				if (dispositivo.ID == id)
 				{
-					return new Dispositivo();
+					return dispositivo;
 				}
-				return dispositivo;
 			}
-			return encontrado;
+
+			return new Dispositivo();
 		}
 
 		private void Contiene(object nodo)
