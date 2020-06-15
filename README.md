@@ -19,7 +19,21 @@ Añadidas para demostrar que la clase **ClaseListaDoblementeEnlazada** soporta u
   *bool devolverNodo*
   
   *return LinkedListNode&#60;object&#x3e;*
-
+  
+ ### GetEnumerator
+  *return IEnumerator&#60;object&#x3e;*
+  
+ Enumerador para recorrer toda la lista
+ 
+ ```
+ while (enumerator.MoveNext())
+ {
+  var dispositivo = (Dispositivo)enumerator.Current;
+  System.Console.WriteLine(dispositivo.ID);
+ }
+ enumerator.Dispose();
+ 
+ ```
 
 ## Propuesta para mostrar propiedades de las clases
 
