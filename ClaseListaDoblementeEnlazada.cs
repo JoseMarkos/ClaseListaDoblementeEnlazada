@@ -91,5 +91,10 @@ namespace ClaseListaDoblementeEnlazada
 		{
 			return ListaDoblementeEnlazada.GetEnumerator();
 		}
+
+		public Dispositivo Primero()
+		{
+			return (Dispositivo)ListaDoblementeEnlazada.First.Value;
+		}
 	}
 }
