@@ -8,23 +8,23 @@ namespace ClaseListaDoblementeEnlazada
         {
             var lista = new ClaseListaDoblementeEnlazada();
             var instancia = new Dispositivo();
-            instancia.MyProperty = 3;
+            instancia.Name = 3;
             instancia.ID = 1;
             var instanciaDos = new Dispositivo
             {
-                MyProperty = 4,
+                Name = 4,
                 ID = 2
             };
             var instanciaTres = new DispositivoHijo2
             {
-                MyProperty = 5,
+                Name = 5,
                 ID = 3,
                 Hola = 500
             };
             var instanciaCuatro = new DispositivoHijo1
             {
                 ID = 4,
-                MyProperty = 6,
+                Name = 6,
                 Descripcion = "hola"
             };
             lista.AgregarPrimero(instancia);
@@ -40,7 +40,7 @@ namespace ClaseListaDoblementeEnlazada
 
             System.Console.WriteLine();
             System.Console.WriteLine("Buscar id 4");
-            
+
             var encontrado = lista.BuscarPorId(4);
             var tipo = encontrado.GetType();
 
@@ -81,16 +81,15 @@ namespace ClaseListaDoblementeEnlazada
         private static void MostrarDispositivo(DispositivoHijo1 dispositivo)
         {
             System.Console.WriteLine(dispositivo.ID);
-            System.Console.WriteLine(dispositivo.MyProperty);
+            System.Console.WriteLine(dispositivo.Name);
             System.Console.WriteLine(dispositivo.Descripcion);
         }
 
         private static void MostrarDispositivo(DispositivoHijo2 dispositivo)
         {
             System.Console.WriteLine(dispositivo.ID);
-            System.Console.WriteLine(dispositivo.MyProperty);
+            System.Console.WriteLine(dispositivo.Name);
             System.Console.WriteLine(dispositivo.Hola);
         }
-
     }
 }

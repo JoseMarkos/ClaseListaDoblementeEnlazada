@@ -119,9 +119,9 @@ namespace ClaseListaDoblementeEnlazada
 			return ListaDoblementeEnlazada.GetEnumerator();
 		}
 
-		public Dispositivo Primero()
+		public object Primero()
 		{
-			return (Dispositivo)ListaDoblementeEnlazada.First.Value;
+			return ListaDoblementeEnlazada.First.Value;
 		}
 
 		public LinkedListNode<object> Primero(bool devolverNodo)
